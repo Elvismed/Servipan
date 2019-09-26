@@ -23,7 +23,6 @@
     "nodemailer": "^6.3.0",
     "paypal-rest-sdk": "^1.8.1",
     "react-native-vector-icons": "^6.6.0",
-    "serve-favicon": "^2.5.0",
     "underscore": "^1.9.1"
   }
 }
