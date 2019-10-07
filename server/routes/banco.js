@@ -1,6 +1,8 @@
 const Banco = require('../models/banco.model');
 const express = require('express');
-
+const bodyParser = require('body-parser');
+const _ = require('underscore');
+const conn = require('../config/db');
 const app = express();
 
 // parse application/x-www-form-urlencoded
