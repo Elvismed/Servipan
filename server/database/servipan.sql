@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.1
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-09-2019 a las 21:05:07
--- Versión del servidor: 10.1.33-MariaDB
--- Versión de PHP: 7.2.6
+-- Tiempo de generación: 07-10-2019 a las 13:07:31
+-- Versión del servidor: 10.1.36-MariaDB
+-- Versión de PHP: 7.2.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -50,7 +50,8 @@ INSERT INTO `bancos` (`idbanco`, `banco`, `cuenta`, `tipo`, `id_panaderia`) VALU
 (12, 'BOD', '01160272510100202395', 'Ahorro', 3),
 (13, 'Venezuela', '01020272510100202395', 'Ahorro', 3),
 (14, 'Mercantil', '01050272510100202395', 'Corriente', 3),
-(15, 'Bicentenario', '01340272510100202395', 'Corriente', 3);
+(15, 'Bicentenario', '01340272510100202395', 'Corriente', 3),
+(16, 'Provincial', '01080272510100202395', 'Corriente', 2);
 
 -- --------------------------------------------------------
 
@@ -188,7 +189,27 @@ INSERT INTO `precios` (`idprecio`, `precio`) VALUES
 (12, 1.82),
 (13, 4.47),
 (14, 4.47),
-(15, 0.61);
+(15, 0.61),
+(16, 12.5),
+(17, 12.5),
+(18, 12.5),
+(19, 12.5),
+(20, 12.5),
+(21, 3.75),
+(22, 2.34),
+(23, 2.25),
+(24, 1.8),
+(25, 12.5),
+(26, 12.5),
+(27, 2.63),
+(28, 4.5),
+(29, 3.3),
+(30, 3.6),
+(31, 3),
+(32, 0.75),
+(33, 4.5),
+(34, 3.75),
+(35, 3.75);
 
 -- --------------------------------------------------------
 
@@ -256,10 +277,7 @@ INSERT INTO `ventas` (`idventa`, `nombre_pro`, `cantidad`, `precio`, `total`, `e
 (17, 'Pan Sandwich', 2, 0, 50000, 'EN PROCESO', 'PAYPAL', 101010, '', 0, 324297, 3, 1),
 (18, 'Pan frances', 10, 0, 15000, 'EN PROCESO', 'Venezuela', 77887788, '', 0, 962012, 3, 1),
 (19, 'Pan canilla', 10, 0, 60000, 'EN PROCESO', 'Venezuela', 0, '', 0, 484996, 3, 1),
-(20, 'Pan andino', 10, 0, 75000, 'EN PROCESO', 'BFC', 0, '', 0, 442707, 3, 1),
-(21, 'Pan campesino', 10, 0, 75000, 'EN PROCESO', 'PAYPAL', 101010, '', 0, 437382, 3, 1),
-(22, 'Pan canilla', 10, 0, 60000, 'EN PROCESO', 'PAYPAL', 101010, '', 0, 437382, 3, 1),
-(80, 'Pan Andino', 6, 0, 57000, 'EN PROCESO', 'Provincial', 1234, '', 0, 332575, 3, 2);
+(20, 'Pan andino', 10, 0, 75000, 'EN PROCESO', 'BFC', 0, '', 0, 442707, 3, 1);
 
 --
 -- Índices para tablas volcadas
@@ -327,7 +345,7 @@ ALTER TABLE `ventas`
 -- AUTO_INCREMENT de la tabla `bancos`
 --
 ALTER TABLE `bancos`
-  MODIFY `idbanco` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `idbanco` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT de la tabla `categorias`
@@ -357,7 +375,7 @@ ALTER TABLE `panaderias`
 -- AUTO_INCREMENT de la tabla `precios`
 --
 ALTER TABLE `precios`
-  MODIFY `idprecio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `idprecio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT de la tabla `productos`
@@ -369,7 +387,7 @@ ALTER TABLE `productos`
 -- AUTO_INCREMENT de la tabla `ventas`
 --
 ALTER TABLE `ventas`
-  MODIFY `idventa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
+  MODIFY `idventa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- Restricciones para tablas volcadas
