@@ -11,5 +11,6 @@ app.use(require('./ventas'));
 app.use(require('./compras'));
 app.use(require('./paypal'));
 app.use(require('./mailer'));
+app.use(require('./recuperacion'));
 
 module.exports = app;

@@ -57,8 +57,8 @@ app.post("/pay",(req,res)=>{
                 "payment_method": "paypal"
             },
             "redirect_urls": {
-                "return_url": "http://localhost:3000/success",
-                "cancel_url": "http://localhost:3000/cancel"
+                "return_url": `http://https://polar-garden-73147.herokuapp.com/:${process.env.PORT}/success`,
+                "cancel_url":  `http://https://polar-garden-73147.herokuapp.com/:${process.env.PORT}/cancel`
             },
             "transactions": [{
                 "item_list": {
@@ -96,6 +96,13 @@ app.post("/pay",(req,res)=>{
 
 
 app.get('/success', (req, res)=>{
+    conn.query('SELECT * FROM precios ORDER BY idprecio DESC LIMIT 1',(err, result)=>{
+        if(err){
+            res.status(400).json({
+                err
+            });
+        }
+    let dolar = result[0].precio
     const payerId = req.query.PayerID;
     const paymentId = req.query.paymentId;
     const execute_payment_json ={
@@ -103,7 +110,7 @@ app.get('/success', (req, res)=>{
      "transactions":[{
          "amount":{
              "currency": "USD",
-             "total": 5.00
+             "total": dolar
          }
      }]
     }
@@ -114,8 +121,9 @@ app.get('/success', (req, res)=>{
         }else{
          
             console.log(JSON.stringify(payment));
-            res.send('success')
+            res.render('success')
         }
+    })
     })
    }) 
 module.exports = app;
