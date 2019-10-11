@@ -140,4 +140,18 @@ app.delete('/prodeli', (req, res) => {
         });
     });
 });
+app.post('/busqueda',(req,res)=>{
+    let nombre = '%'+req.body.busqueda+'%';
+    conn.query('SELECT * FROM productos INNER JOIN categorias on productos.idcategoria = categorias.idcategoria WHERE nombre like ?',nombre,(err,result)=>{
+        if(err) {
+            res.status(400).json({
+                err
+            });
+        }
+
+        res.json({
+            result
+        });
+    })
+})
 module.exports = app;

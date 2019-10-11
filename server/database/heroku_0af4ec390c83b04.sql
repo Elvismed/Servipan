@@ -21,8 +21,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `servipan`
 --
-CREATE DATABASE IF NOT EXISTS `servipan` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `servipan`;
+CREATE DATABASE IF NOT EXISTS `heroku_0af4ec390c83b04` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `heroku_0af4ec390c83b04`;
 
 -- --------------------------------------------------------
 
@@ -77,11 +77,11 @@ INSERT INTO `categorias` (`idcategoria`, `nombre_cat`, `imagen`) VALUES
 (5, 'Dulce', 'https://servipan.000webhostapp.com/img/pro2.png'),
 (6, 'Cachito', 'https://servipan.000webhostapp.com/img/pro4.png'),
 (7, 'Sandwich', 'https://servipan.000webhostapp.com/img/pro7.png'),
-(8, 'Bebidas', ''),
-(9, 'Carnes', ''),
-(10, 'Dulces', ''),
-(11, 'Verduras', ''),
-(12, 'Frutas', '');
+(8, 'Bebidas', 'https://servipan.000webhostapp.com/img/pro8.png'),
+(9, 'Carnes', 'https://servipan.000webhostapp.com/img/pro9.png'),
+(10, 'Dulces', 'https://servipan.000webhostapp.com/img/pro10.png'),
+(11, 'Verduras', 'https://servipan.000webhostapp.com/img/pro11.png'),
+(12, 'Frutas', 'https://servipan.000webhostapp.com/img/pro12.png');
 
 -- --------------------------------------------------------
 
