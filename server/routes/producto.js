@@ -69,13 +69,6 @@ app.post('/datos',(req,res)=>{
         });
     });
 })
- 
-
-
-
-
-
-
 app.post('/prodagg', (req, res) => {
     let data = new Producto(
         req.body.nombre,
