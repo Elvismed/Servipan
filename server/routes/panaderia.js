@@ -16,7 +16,7 @@ app.use(bodyParser.json())
 
 app.put('/perfadmin',(req, res)=>{
     let idpanaderia = req.body.idpanaderia
-    let data = _.pick(req.body,['nombre_pan','correo','estado','ciudad']);
+    let data = _.pick(req.body,['nombre_pan','correo_pan','estado','ciudad']);
     
     conn.query('UPDATE panaderias SET ? where idpanaderia = ?', [data ,idpanaderia],(err, result)=>{
         if(err){
