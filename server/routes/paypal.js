@@ -6,7 +6,7 @@ const conn = require('../config/db');
 const Precio = require('../models/preciosmodel');
 var fs = require('fs');
 var MyCss ={
-    style : fs.readFileSync('./public/style.css','utf8')
+    style : fs.readFileSync('./views/index.ejs','utf8')
 };
 
 paypal.configure({
