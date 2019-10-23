@@ -121,7 +121,7 @@ app.get('/success', (req, res)=>{
         }else{
             res.render('success')
             res.json(payment)
-            console.log(res)
+            console.log(payment)
            
         }
     })
