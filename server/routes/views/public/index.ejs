@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/server/routes/views/public/css/style">
     
     
@@ -11,8 +12,15 @@
 </head>
 <body>
     <style>
-        body { background-color: #f0f0f0; }
+        * { font-family: 'Roboto', sans-serif; }
+body { background-color: #ffffff; }
 .contenedor {
+    margin-top: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contenedor1, .contenedor2 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,10 +30,12 @@
     font-weight: 300;
     text-align: center;
 }
-.paypal { width: 30%; }
-.servipan { width: 50%; }
+.paypal { width: 50%;
+}
+.servipan { width: 30%; }
 .arrow { width: 20%;
          margin-right: 8px;
+         margin-top: 5px;
 }
 .boton_personalizado{
     text-decoration: none;
@@ -44,11 +54,14 @@
     cursor:pointer;
     color: #689bd0;
     background-color: #ffffff;
-}</style>
+}
+@media(max-width:424px) {}
+</style>
     <div class="contenedor">
-        <img src="https://servipan.000webhostapp.com/img/paypal.png" alt="" class="paypal">
-        <img src="https://servipan.000webhostapp.com/img/arrow.png" alt="" class="arrow">
+
         <img src="https://servipan.000webhostapp.com/img/servipan.png" alt="" class="servipan">
+        <img src="https://servipan.000webhostapp.com/img/arrow.png" alt="" class="arrow">
+        <img src="https://servipan.000webhostapp.com/img/paypal.png" alt="" class="paypal">
     </div>
     <div  class="contenedor">
         <p class="f">Click en el boton para hacer la transaccion en Paypal.</p>
