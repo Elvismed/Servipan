@@ -119,9 +119,10 @@ app.get('/success', (req, res)=>{
             console.log(error.response);
             throw error;
         }else{
-         
-            console.log(JSON.stringify(payment));
             res.render('success')
+            res.json(payment)
+            console.log(res)
+           
         }
     })
     })
