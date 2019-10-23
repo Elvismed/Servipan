@@ -4,10 +4,7 @@ const bodyParser = require('body-parser');
 const ejs = require('ejs');
 const conn = require('../config/db');
 const Precio = require('../models/preciosmodel');
-var fs = require('fs');
-var MyCss ={
-    style : fs.readFileSync('./views/index.ejs','utf8')
-};
+
 
 paypal.configure({
     'mode': 'sandbox', //sandbox or live
@@ -15,7 +12,7 @@ paypal.configure({
     'client_secret': 'EKK9jP-enuq-ey8c6aZ8D5jvW3mu-CUWlqqvg87ZQBcGq9JVZjpDmNENrACuKo6UOhSKNWPtpMJHXhmN'
   });
 const app = express();
-app.use('/public', express.static('public'))
+app.use(express.static('public'))
 app.set('views',__dirname+'/views');
 app.engine('ejs',ejs.renderFile);
 app.set('view engine','ejs');
