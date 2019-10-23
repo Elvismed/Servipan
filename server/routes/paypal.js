@@ -15,7 +15,7 @@ paypal.configure({
     'client_secret': 'EKK9jP-enuq-ey8c6aZ8D5jvW3mu-CUWlqqvg87ZQBcGq9JVZjpDmNENrACuKo6UOhSKNWPtpMJHXhmN'
   });
 const app = express();
-app.use(express.static(path.join(__dirname + '/public')));
+app.use('/public', express.static('public'))
 app.set('views',__dirname+'/views');
 app.engine('ejs',ejs.renderFile);
 app.set('view engine','ejs');
