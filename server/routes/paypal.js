@@ -119,7 +119,7 @@ app.get('/success', (req, res)=>{
             console.log(error.response);
             throw error;
         }else{
-            res.json(payment).render('<h1>Finalizaditop</h1>');
+            res.json(payment).render('success');
          
             console.log(payment)
         }
