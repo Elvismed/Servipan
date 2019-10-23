@@ -24,9 +24,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 app.get('/home',(req,res)=>{
-    res.render('index',{
-        MyCss : MyCss
-    })
+    res.render('index')
     
 })
 
