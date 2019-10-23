@@ -13,7 +13,7 @@ paypal.configure({
   });
 const app = express();
 app.use(express.static('public'))
-app.set('views',__dirname+'../public');
+app.set('public',__dirname+'../');
 app.engine('ejs',ejs.renderFile);
 app.set('view engine','ejs');
 // parse application/x-www-form-urlencoded
