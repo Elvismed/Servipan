@@ -57,8 +57,8 @@ app.post("/pay",(req,res)=>{
                 "payment_method": "paypal"
             },
             "redirect_urls": {
-                "return_url": `https://polar-garden-73147.herokuapp.com/:${process.env.PORT}/success`,
-                "cancel_url":  `https://polar-garden-73147.herokuapp.com/:${process.env.PORT}/cancel`
+                "return_url": `https://polar-garden-73147.herokuapp.com/success`,
+                "cancel_url":  `https://polar-garden-73147.herokuapp.com/cancel`
             },
             "transactions": [{
                 "item_list": {
