@@ -120,7 +120,6 @@ app.get('/success', (req, res)=>{
             throw error;
         }else{
             res.render('success')
-            res.json(payment)
             console.log(payment)
            
         }
