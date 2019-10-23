@@ -4,12 +4,18 @@ const bodyParser = require('body-parser');
 const ejs = require('ejs');
 const conn = require('../config/db');
 const Precio = require('../models/preciosmodel');
+var fs = require('fs');
+var MyCss ={
+    style : fs.readFileSync('./public/style.css','utf8')
+};
+
 paypal.configure({
     'mode': 'sandbox', //sandbox or live
     'client_id': 'AQZSTDZzg9mR6X0gmJo9zekCdWdVI1cq06_wED3m6mXZI1VcElg6NOl5ZR5x-kZa22RNZN_DCB0pw4ji',
     'client_secret': 'EKK9jP-enuq-ey8c6aZ8D5jvW3mu-CUWlqqvg87ZQBcGq9JVZjpDmNENrACuKo6UOhSKNWPtpMJHXhmN'
   });
 const app = express();
+app.use(express.static(path.join(__dirname + '/public')));
 app.set('views',__dirname+'/views');
 app.engine('ejs',ejs.renderFile);
 app.set('view engine','ejs');
@@ -21,7 +27,10 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 app.get('/home',(req,res)=>{
-    res.render('index');
+    res.render('index',{
+        MyCss : MyCss
+    })
+    
 })
 
 app.post('/total',(req, res)=>{
