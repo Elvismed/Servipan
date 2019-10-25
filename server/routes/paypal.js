@@ -129,7 +129,7 @@ app.get('/success', (req, res)=>{
     }
     paypal.payment.execute(paymentId, execute_payment_json, function(error ,payment){
       
-            res.redirect('/final',{
+            res.redirect(200,'/final',{
                 payment
             })
             console.log(payment);
