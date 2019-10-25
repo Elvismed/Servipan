@@ -97,20 +97,7 @@ app.post("/pay",(req,res)=>{
     
     
 })
-app.get('/final', (req,res)=>{
-    var algo = req.query.algo
-    res.render('success',{algo})
-    console.log("Estas en Final");
-    console.log(algo);
-    /*
-    if(payment){
-        console.log(payment)
-    }
-    else{
-        res.send('termine la compra')
-    }
-    */
-   });
+
    
 app.get('/success', (req, res)=>{
     conn.query('SELECT * FROM precios ORDER BY idprecio DESC LIMIT 1',(err, result)=>{
@@ -133,14 +120,8 @@ app.get('/success', (req, res)=>{
     }
     paypal.payment.execute(paymentId, execute_payment_json, function(error ,payment){
         if(payment){
-            var algo = "se ha compleado la compra";
-
-            res.redirect('/final?algo='+algo);
-                console.log(payment);
-        }else{
-            console.log("no ha terminado")
-        }    
-        
+            res.redirect('/success')
+        }
     })
     })
    }) 
