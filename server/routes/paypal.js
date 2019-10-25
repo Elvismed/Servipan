@@ -98,7 +98,10 @@ app.post("/pay",(req,res)=>{
     
 })
 
-
+const etv = app.get('/final', (req,res)=>{
+    console.log("etv x2");
+   });
+   
 app.get('/success', (req, res)=>{
     conn.query('SELECT * FROM precios ORDER BY idprecio DESC LIMIT 1',(err, result)=>{
         if(err){
@@ -122,15 +125,13 @@ app.get('/success', (req, res)=>{
       
             res.render('success',{
                 payment
-            })
+            }.redirect(etv))
             console.log(payment);
-            redirect_urls(etv);
+            
 
         
     })
     })
    }) 
-   const etv = app.get('/final', (req,res)=>{
-    console.log("etv x2");
-   });
+  
 module.exports = app;
