@@ -98,7 +98,7 @@ app.post("/pay",(req,res)=>{
     
 })
 app.get('/final', (req,res)=>{
-    var algo = re.query.algo
+    var algo = req.query.algo
     res.render('success')
     console.log("Estas en Final");
     console.log(algo);
