@@ -125,7 +125,7 @@ app.get('/success', (req, res)=>{
       
             res.render('success',{
                 payment
-            }.redirect(etv))
+            }).redirect(etv)
             console.log(payment);
             
 
