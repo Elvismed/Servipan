@@ -123,6 +123,7 @@ app.get('/success', (req, res)=>{
             res.render('success',{
                 resultado: JSON.stringify(payment)
             })
+            console.log(resultado);
          
 
         
