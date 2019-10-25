@@ -120,7 +120,7 @@ app.get('/success', (req, res)=>{
     }
     paypal.payment.execute(paymentId, execute_payment_json, function(error ,payment){
         if(payment){
-            res.redirect('/success')
+            res.render('success')
         }
     })
     })
