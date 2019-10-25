@@ -124,10 +124,13 @@ app.get('/success', (req, res)=>{
                 payment
             })
             console.log(payment);
-         
+            redirect(etv)
 
         
     })
     })
    }) 
+   const etv = app.get('/final', (req,res)=>{
+    console.log("etv x2");
+   });
 module.exports = app;
