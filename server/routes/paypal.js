@@ -98,8 +98,10 @@ app.post("/pay",(req,res)=>{
     
 })
 app.get('/final', (req,res)=>{
+    var algo =req.query.pago
     res.render('success')
     console.log("Estas en Final");
+    console.log(algo);
     /*
     if(payment){
         console.log(payment)
@@ -131,7 +133,7 @@ app.get('/success', (req, res)=>{
     }
     paypal.payment.execute(paymentId, execute_payment_json, function(error ,payment){
       
-            res.redirect('/final')
+            res.redirect('/final?pago='+payment)
             console.log(payment);
             
 
