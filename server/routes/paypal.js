@@ -98,7 +98,7 @@ app.post("/pay",(req,res)=>{
     
 })
 app.get('/final', (req,res)=>{
-    var algo = req.params.payment
+    var algo = re.query.algo
     res.render('success')
     console.log("Estas en Final");
     console.log(algo);
@@ -132,11 +132,14 @@ app.get('/success', (req, res)=>{
      }]
     }
     paypal.payment.execute(paymentId, execute_payment_json, function(error ,payment){
-            
-        res.redirect(303, '/final?' + querystring.stringify(payment));
-            console.log(payment);
-            
+        if(payment){
+            var algo = "se ha compleado la compra";
 
+            res.redirect('/final?algo='+algo);
+                console.log(payment);
+        }else{
+            console.log("no ha terminado")
+        }    
         
     })
     })
