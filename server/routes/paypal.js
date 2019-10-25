@@ -121,9 +121,9 @@ app.get('/success', (req, res)=>{
     paypal.payment.execute(paymentId, execute_payment_json, function(error ,payment){
       
             res.render('success',{
-                resultado: JSON.stringify(payment)
+                payment
             })
-            console.log(resultado);
+            console.log(payment);
          
 
         
