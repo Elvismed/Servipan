@@ -51,8 +51,8 @@ app.post('/pago', (req, res) => {
 
     const email = req.body.correo;
     const output =`
-    <h1>Acaba de realizar una compra en nuestra aplicacion Servipan C.A </h1>
-    <p> nuestro equipo revisara su compra 
+    <h1>Estimado Usuario, acaba de realizar una compra en nuestra aplicacion Servipan C.A </h1>
+    <p> Nuestro equipo revisara su compra 
         a la brevedad posible para su cambio de estatus, este atento del proximo correo</p>
         `;
         process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = 0;
@@ -224,7 +224,7 @@ app.put('/estatus',(req, res)=>{
         const email_pan = req.body.email_pan;
     const output2 =`
     <h1>Servipan C.A</h1> 
-    <h2>Confirmacion de estado de venta  de${req.body.nombre_pan} </h2>
+    <h2>Confirmacion de estado de venta  de ${req.body.nombre_pan} </h2>
     <p>Datos de Compra</p>
         <ul>
         <li>Producto: ${req.body.nombre_pro}</li>
